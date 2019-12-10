@@ -12,13 +12,14 @@ import java.io.ByteArrayOutputStream;
 public class ConverterService {
 
     public String convertXmlToText(String xmlFileName, String xsltFileName) {
-        String relativePathToResources = "../src/main/resources/";
         ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = null;
         try {
-            transformer = transformerFactory.newTransformer(new StreamSource(relativePathToResources + xsltFileName));
-            transformer.transform(new StreamSource(relativePathToResources + xmlFileName), new StreamResult(resultStream));
+            StreamSource fileStreamSource = new StreamSource(getClass().getClassLoader().getResourceAsStream(xmlFileName));
+            StreamSource xsltStreamSource = new StreamSource(getClass().getClassLoader().getResourceAsStream(xsltFileName));
+            transformer = transformerFactory.newTransformer(xsltStreamSource);
+            transformer.transform(fileStreamSource, new StreamResult(resultStream));
             return resultStream.toString();
         } catch (TransformerException ex) {
             return ex.getMessage();

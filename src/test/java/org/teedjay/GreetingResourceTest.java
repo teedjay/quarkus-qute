@@ -15,7 +15,11 @@ public class GreetingResourceTest {
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is("/Users/thore/src/main/resources/xslt/author-info.xslt (No such file or directory)"));
+             .body(is("\n" +
+                     "        Article - My Article\n" +
+                     "        Authors: \n" +
+                     "        - Mr. Foo\n" +
+                     "        - Mr. Bar"));
     }
 
 }
