@@ -4,22 +4,27 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.containsString;
 
 @QuarkusTest
 public class TemplateResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testWithSingleInput() {
         given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(is("\n" +
-                     "        Article - My Article\n" +
-                     "        Authors: \n" +
-                     "        - Mr. Foo\n" +
-                     "        - Mr. Bar"));
+            .when().get("/template/single")
+            .then()
+                .statusCode(200)
+                .body(containsString("Ingen kvittering i dag!"));
+    }
+
+    @Test
+    public void testWithMultipleInputs() {
+        given()
+            .when().get("/template/multiple")
+            .then()
+                .statusCode(200)
+                .body(containsString("Varslingskanal : EPOST"));
     }
 
 }
