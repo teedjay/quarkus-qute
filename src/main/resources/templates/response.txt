@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{config.title}</title>
+</head>
+<body>
+    <h1>{config.title}</h1>
+    <div>{config.message}</div>
+    <hr/>
+    <h2>Kvitteringsinfo</h2>
+    <pre>
+    {#if showReceipt}
+    Tidspunkt : {receipt.tidspunkt}
+    Varslingskanal : {receipt.varslingfeilet.varslingskanal}
+    Beskrivelse : {receipt.varslingfeilet.beskrivelse}
+    {#else}
+    Ingen kvittering i dag!
+    {/if}
+    </pre>
+    <footer>&copy; {config.author} 2019</footer>
+</body>
+</html>

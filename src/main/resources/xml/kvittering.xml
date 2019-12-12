@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kvittering xmlns="http://begrep.difi.no/sdp/schema_v10">
+    <tidspunkt>2019-12-12T21:28:47.050+01:00</tidspunkt>
+    <varslingfeilet>
+        <varslingskanal>EPOST</varslingskanal>
+        <beskrivelse>varslingen feilet</beskrivelse>
+    </varslingfeilet>
+</kvittering>

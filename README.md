@@ -1,12 +1,17 @@
-# quarkus-xslt
-Testing plain XSLT from Quarkus
+# quarkus-qute
+Testing Qute templating from Quarkus
 
 ## Start dev mode
 ```
 mvn clean quarkus:dev
 ```
 
+## Testing
+```
+curl http://0.0.0.0:8080/template/single        <== one named input to the template
+curl http://0.0.0.0:8080/template/multiple      <== using multiple named inputs to the template
+```
+
 ## Some bonus features
-- testing new json log format feature from Quarkus 1.1.0.CR1 +
-- using a CDI producer to make SLF4J Logger injectable
-- rigging the MDC with various values in ContainerRequestFilter
+- creating XML from multiple inputs
+- using JAXB as input to template (simple alternative to XSLT)
