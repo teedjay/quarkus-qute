@@ -10,12 +10,12 @@
     <hr/>
     <h2>Kvitteringsinfo</h2>
     <pre>
-    {#if showReceipt}
+    {#if receipt == NOT_FOUND}
+    Ingen kvittering i dag!
+    {#else}
     Tidspunkt : {receipt.tidspunkt}
     Varslingskanal : {receipt.varslingfeilet.varslingskanal}
     Beskrivelse : {receipt.varslingfeilet.beskrivelse}
-    {#else}
-    Ingen kvittering i dag!
     {/if}
     </pre>
     <footer>&copy; {config.author} 2019</footer>

@@ -28,7 +28,7 @@ public class TemplateService {
 
     public String createFromMultipleSources() {
         Kvittering receipt = fetchReceipt("xml/kvittering.xml");
-        return response.data("config", config).data("receipt", receipt).data("showReceipt", true).render();
+        return response.data("config", config).data("receipt", receipt).render();
     }
 
     private Kvittering fetchReceipt(String filename) {
