@@ -6,8 +6,11 @@
 </head>
 <body>
     <h1>{config.title}</h1>
-    <div>{config.message}</div>
-    <div>{config.message.reverseString}</div>
+    <div>Message is : {config.message}</div>
+    <div>Reverse title is : {config.title.reverseString}</div>
+    <div>Reverse message is : {config.message.reverseString}</div>
+    <pre>Multiple parameterer method : {config.message.formatString('crazyformat')}</pre>
+    <pre>Multiple param infix notation : {config.message formatString 'crazyformat'}</pre>
     <hr/>
     <h2>Kvitteringsinfo</h2>
     <pre>
