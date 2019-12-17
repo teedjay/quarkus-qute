@@ -7,6 +7,7 @@
 <body>
     <h1>{config.title}</h1>
     <div>{config.message}</div>
+    <div>{config.message.reverseString}</div>
     <hr/>
     <h2>Kvitteringsinfo</h2>
     <pre>
