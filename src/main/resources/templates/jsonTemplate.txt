@@ -1,0 +1,41 @@
+{
+
+    "stringIsNull" : "{data.stringIsNull ?: 'was null as expected'}",
+    {#if data.stringIsNull is null}
+    "stringIsNullIf" : "null works with if's",
+    {/if}
+
+    "stringIsEmpty" : "{data.stringIsEmpty ?: "should not be false"}",
+    {#if data.stringIsEmpty is null}
+    "stringIsEmptyIf" : "should not be shown",
+    {/if}
+
+    "stringIsBlank" : "{data.stringIsBlank ?: "should not be false"}",
+    {#if data.stringIsBlank is null}
+    "stringIsBlankIf" : "should not be shown",
+    {/if}
+
+    "stringIsFull" : "{data.stringIsFull ?: "should not be false"}",
+    {#if data.stringIsFull is null}
+    "stringIsFullIf" : "should not be shown",
+    {/if}
+
+    "listIsNull" : "{data.listIsNull ?: 'was null as expected'}",
+    {#if data.listIsNull is null}
+    "listIsNullIf" : "null works with if's",
+    {/if}
+
+    "listIsEmpty" : "{data.listIsEmpty ?: 'should not be false'}",
+    {#if data.listIsEmpty is null}
+    "listIsEmptyIf" : "should not be shown",
+    {/if}
+
+    "listIsFull" : "{data.listIsFull ?: 'should not be false'}",
+    {#if data.listIsFull is null}
+    "listIsFullIf" : "should not be shown",
+    {/if}
+
+
+    "wasNull" : "{data.listIsNull wasNull}"
+
+}
